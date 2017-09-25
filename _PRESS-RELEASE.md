@@ -18,27 +18,39 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  Foodie
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  People who want to find nice places to eat to take photos of their food to post on Instagram.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Allows users to search for nearby restaurants, and provides related Instagram images of that location. If the food is pretty enough, the reader will go eat there! 
 
 ## Problem ##
   > Describe the problem your product solves.
+  Users have a difficult time finding where the nicest food items are. The yelp photos are ugly but it does lead to good food, and the
+  instagram photos are pretty, but they can be misleading and the food can taste bad.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  The product allows the user to compare the Instagram photos with the food location in real time!
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  Foodie will re-define the game on how users decide on where to eat next. No longer will they have to choose between good tasting
+  ugly food or bad tasting pretty food, now they have the chance to get the best both worlds!
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  The user just needs to enter the name of a restaurant into the search box, and both the Yelp and Instagram photos will magically appear!
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  Beforehand, I never knew where to eat I always saw these cool photos from my friend's instagrams but the food always tasted bad. Now,
+  when I post photos on Instagram, I know all my food is good because I've already run it through Foodie!
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  Head over to the foodie website and make your food choices heard!
