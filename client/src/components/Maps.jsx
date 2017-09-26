@@ -1,5 +1,4 @@
 import React from 'react';
-//import BookmarkEntry from './BookmarkEntry.jsx';
 import MapBoxGl from 'mapbox-gl';
 import ReactMapboxGl, { Layer, Feature, Marker, Popup } from "react-mapbox-gl";
 
@@ -7,7 +6,7 @@ const Map = ReactMapboxGl({
   accessToken: 'pk.eyJ1IjoidHlsZXJ0cnVvbmciLCJhIjoiY2o4MTFxbHN4NHZqMjJxbzN2bjNmMDByOCJ9.mZFEmpCfX5TytPpEujmYmg'
 });
 
-const Bookmarks = (props) => {
+const Maps = (props) => {
   return (
   <div>
     <Map
@@ -50,10 +49,4 @@ const Bookmarks = (props) => {
     );
 }
 
-export default Bookmarks;
-/*
-    {props.bookmarks.map(bookmark => {
-      return <BookmarkEntry bookmark={bookmark} key={bookmark.id} />
-    })}
-
-*/
+export default Maps;

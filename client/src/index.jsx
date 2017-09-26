@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import FoodList from './components/FoodList.jsx';
 import SearchBar from './components/SearchBar.jsx';
-import Bookmarks from './components/Bookmarks.jsx';
+import Maps from './components/Maps.jsx';
+import FoodDisplay from './components/FoodDisplay.jsx';
 
 class App extends React.Component {
 
@@ -11,7 +12,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       foods: [],
-      bookmarks: []
+      bookmarks: [],
+      bookmark: {}
     }
   }
 
@@ -20,7 +22,9 @@ class App extends React.Component {
   }
 
   renderLocation(bookmark) {
-    console.log(bookmark.address1);
+    this.setState({
+      bookmark: bookmark
+    })
   }
   
   setBookmarks() {
@@ -81,8 +85,9 @@ class App extends React.Component {
     return (
       <div>
         <SearchBar searchServer={this.searchServer.bind(this)} setBookmarks={this.setBookmarks.bind(this)} />
+        <FoodDisplay bookmark={this.state.bookmark} />
         <br></br>
-        <Bookmarks bookmarks={this.state.bookmarks} renderLocation={this.renderLocation.bind(this)} />
+        <Maps bookmarks={this.state.bookmarks} renderLocation={this.renderLocation.bind(this)} />
         <br></br>
         <FoodList foods={this.state.foods} bookmarkFood={this.bookmarkFood.bind(this)} />
       </div>
