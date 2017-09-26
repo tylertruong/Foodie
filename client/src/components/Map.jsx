@@ -3,7 +3,7 @@ import MapBoxGl from 'mapbox-gl';
 import ReactMapboxGl from "react-mapbox-gl";
 
 const Map = ReactMapboxGl({
-  accessToken: 'AIzaSyAk8kG5R2-odvxHQudZjXV8EkGLFzSk5so'
+  accessToken: 'pk.eyJ1IjoidHlsZXJ0cnVvbmciLCJhIjoiY2o4MTFxbHN4NHZqMjJxbzN2bjNmMDByOCJ9.mZFEmpCfX5TytPpEujmYmg'
 });
 
 export default Map;

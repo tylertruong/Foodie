@@ -20,12 +20,15 @@ let foodSchema = mongoose.Schema({
   phone: String,
   bookmarked: Boolean,
   query: String,
+  long: Number,
+  lat: Number
+
 })
 
 let Food = mongoose.model('Food', foodSchema);
 
 let newFoodEntry = (food, query) => { 
-  
+  console.log(food);
   let instance = new Food({
     id: food.id, 
     address1: food.location.display_address[0], 
@@ -34,7 +37,9 @@ let newFoodEntry = (food, query) => {
     name: food.name, 
     phone: food.display_phone, 
     bookmarked: false, 
-    query: query
+    query: query,
+    long: food.coordinates.longitude,
+    lat: food.coordinates.latitude
   });
 
   return instance.save();
