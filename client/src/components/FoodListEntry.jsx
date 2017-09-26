@@ -3,7 +3,7 @@ import React from 'react';
 
 const FoodListEntry = (props) => {
     return (
-    <div className="card" style={{overflow:'hidden', width:'350px', display: 'inline-block', margin: '10px'}}>
+    <div className="card" style={{overflow:'hidden', margin: '10px'}}>
       <img className="card-img-top" src={props.food.imageUrl} style={{height: '300px', width: '350px'}}></img>
       <div className="card-block" style={{height: '300px', width: '350px', padding: '10px'}}>
         <h4 className="card-title">{props.food.name}</h4>
