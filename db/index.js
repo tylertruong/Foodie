@@ -28,7 +28,6 @@ let foodSchema = mongoose.Schema({
 let Food = mongoose.model('Food', foodSchema);
 
 let newFoodEntry = (food, query) => { 
-  console.log(food);
   let instance = new Food({
     id: food.id, 
     address1: food.location.display_address[0], 

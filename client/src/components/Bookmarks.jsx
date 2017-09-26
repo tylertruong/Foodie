@@ -21,7 +21,12 @@ const Bookmarks = (props) => {
           type="symbol"
           id="marker"
           layout={{ "icon-image": "marker-15" }}>
-          <Feature coordinates={[-122.4194, 40.7749]}/>
+
+          {props.bookmarks.map((bookmark) => {
+              return <Feature key={bookmark.id} coordinates={[bookmark.long, bookmark.lat]}/>
+            })
+          }
+          
         </Layer>
     </Map>
   </div>
