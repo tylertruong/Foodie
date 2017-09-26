@@ -22,7 +22,11 @@ let foodSchema = mongoose.Schema({
   query: String,
   long: Number,
   lat: Number,
-  rating: Number
+  rating: Number,
+  reviewCount: Number,
+  price: String,
+  url: String,
+  category: String,
 })
 
 let Food = mongoose.model('Food', foodSchema);
@@ -39,7 +43,11 @@ let newFoodEntry = (food, query) => {
     query: query,
     long: food.coordinates.longitude,
     lat: food.coordinates.latitude,
-    rating: food.rating
+    rating: food.rating,
+    reviewCount: food.review_count,
+    price: food.price,
+    url: food.url,
+    category: food.categories[0].title
   });
 
   return instance.save();

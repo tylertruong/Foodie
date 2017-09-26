@@ -76,7 +76,11 @@ class App extends React.Component {
       url: '/foods',
       data: {id: item.id, bookmarked: item.bookmarked},
       success: (data) => {
+        this.setState({
+          bookmark: item
+        }, () => {
         this.fetch(item.query);
+        })
       }
     })
   }
@@ -85,6 +89,7 @@ class App extends React.Component {
     return (
       <div>
         <SearchBar searchServer={this.searchServer.bind(this)} setBookmarks={this.setBookmarks.bind(this)} />
+        <br></br>
         <FoodDisplay bookmark={this.state.bookmark} />
         <br></br>
         <Maps bookmarks={this.state.bookmarks} renderLocation={this.renderLocation.bind(this)} />

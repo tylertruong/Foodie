@@ -3,7 +3,8 @@ import MapBoxGl from 'mapbox-gl';
 import ReactMapboxGl, { Layer, Feature, Marker, Popup } from "react-mapbox-gl";
 
 const Map = ReactMapboxGl({
-  accessToken: 'pk.eyJ1IjoidHlsZXJ0cnVvbmciLCJhIjoiY2o4MTFxbHN4NHZqMjJxbzN2bjNmMDByOCJ9.mZFEmpCfX5TytPpEujmYmg'
+  accessToken: 'pk.eyJ1IjoidHlsZXJ0cnVvbmciLCJhIjoiY2o4MTFxbHN4NHZqMjJxbzN2bjNmMDByOCJ9.mZFEmpCfX5TytPpEujmYmg',
+  scrollZoom: false
 });
 
 const Maps = (props) => {
