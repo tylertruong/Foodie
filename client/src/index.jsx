@@ -13,43 +13,45 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.fetch();
-  }
+  // componentDidMount() {
+  //   this.fetch();
+  // }
 
-  fetch() {
+  fetch(name) {
    $.ajax({
     method: 'GET',
-    url: '/foods',
+    url: `/foods?query=${name}`,
     success: (data) => {
       this.setState({
         foods: data
-      })
-      console.log(this.state.foods);
+      });
     }
    });
 
   }
 
   searchServer(name) {
-    console.log('searched server with ', name);
-
    $.ajax({
     method: 'POST',
     url: '/foods',
     data: {name: name},
     success: (data) => {
-      this.fetch();
+      this.fetch(name);
     }
    });
 
+  }
+
+  bookmarkFood(item) {
+    console.log('clicked', item);
   }
 
   render () {
     return (
       <div>
         <SearchBar searchServer={this.searchServer.bind(this)}/>
-        <FoodList foods={this.state.foods} />
+        <br></br>
+        <FoodList foods={this.state.foods} bookmarkFood={this.bookmarkFood.bind(this)} />
       </div>
     )
   }
