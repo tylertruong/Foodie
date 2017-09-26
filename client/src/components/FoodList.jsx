@@ -3,7 +3,7 @@ import FoodListEntry from './FoodListEntry.jsx';
 
 const FoodList = (props) => {
   return (
-  <div>
+   <div>
     {props.foods.map(food => {
       return <FoodListEntry key={food.id} food={food} bookmarkFood={props.bookmarkFood}/>
     })}
