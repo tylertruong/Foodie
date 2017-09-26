@@ -29,7 +29,7 @@ let newFoodEntry = (food, query) => {
   let instance = new Food({
     id: food.id, 
     address1: food.location.display_address[0], 
-    address2: food.location.display_address[0], 
+    address2: food.location.display_address[1], 
     imageUrl: food.image_url, 
     name: food.name, 
     phone: food.display_phone, 

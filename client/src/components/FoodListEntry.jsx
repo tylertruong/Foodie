@@ -14,7 +14,7 @@ const FoodListEntry = (props) => {
           <br></br>
           <b>Phone:</b> <br></br>
           {props.food.phone} <br></br><br></br>
-          <button href="#" className="btn btn-primary" onClick={() => props.bookmarkFood(props.food)}>Bookmark</button>
+          <button href="#" className="btn btn-primary" onClick={() => props.bookmarkFood(props.food)}>{props.food.bookmarked ? 'Bookmarked' : 'Bookmark'}</button>
         </p>
  
        </div>

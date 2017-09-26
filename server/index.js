@@ -11,13 +11,25 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.get('/foods', (req, res, next) => {
-  db.Food.find({query: req.query.query})
-  .then((data) => {
-    res.status(200).send(data);
-  })
-  .catch((err) => {
-    console.log('Error', err);
-  });
+  console.log(req.query);
+  if (req.query.bookmarks === 'bookmarks') {
+    db.Food.find({bookmarked: true})
+    .then((data) => {
+      res.status(200).send(data);
+    })
+    .catch((err) => {
+      console.log('Error', err);
+    })
+    ;
+  } else {
+    db.Food.find({query: req.query.query})
+    .then((data) => {
+      res.status(200).send(data);
+    })
+    .catch((err) => {
+      console.log('Error', err);
+    });
+  }
   
 })
 
@@ -38,7 +50,8 @@ app.post('/foods', (req, res, next) => {
       res.status(200).send();
     })
     .catch((err) => {
-      console.log('Error', err);
+      console.log(err);
+      res.status(200).send();
     });
 
     
@@ -46,6 +59,16 @@ app.post('/foods', (req, res, next) => {
   
 })
 
+app.put('/foods', (req, res, next) => {
+  let bool = (req.body.bookmarked === 'true');
+  db.Food.findOneAndUpdate({id: req.body.id}, {bookmarked: !bool}, {upsert: true})
+  .then((data) => {
+    res.status(200).send();
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+})
 
 app.listen(3000, () => {
   console.log('listening on port 3000!');
