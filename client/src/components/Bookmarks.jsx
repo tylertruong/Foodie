@@ -37,7 +37,7 @@ const Bookmarks = (props) => {
               return <Feature 
                         key={bookmark.id} 
                         coordinates={[bookmark.long, bookmark.lat]}
-                        onClick={() => console.log(bookmark.name, bookmark.address1, bookmark.address2)}
+                        onClick={() => props.renderLocation(bookmark)}
                         >
                       </Feature>
             })

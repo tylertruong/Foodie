@@ -18,7 +18,17 @@ class App extends React.Component {
   componentDidMount() {
     this.getBookMarks();
   }
+
+  renderLocation(bookmark) {
+    console.log(bookmark.address1);
+  }
   
+  setBookmarks() {
+    this.setState({
+      foods: this.state.bookmarks
+    });
+  }
+
   getBookMarks() {
     $.ajax({
       method: 'GET',
@@ -70,9 +80,9 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <SearchBar searchServer={this.searchServer.bind(this)}/>
+        <SearchBar searchServer={this.searchServer.bind(this)} setBookmarks={this.setBookmarks.bind(this)} />
         <br></br>
-        <Bookmarks bookmarks={this.state.bookmarks} />
+        <Bookmarks bookmarks={this.state.bookmarks} renderLocation={this.renderLocation.bind(this)} />
         <br></br>
         <FoodList foods={this.state.foods} bookmarkFood={this.bookmarkFood.bind(this)} />
       </div>

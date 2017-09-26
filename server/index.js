@@ -38,6 +38,8 @@ app.post('/foods', (req, res, next) => {
     let result = JSON.parse(data);
     let foods = result.businesses;
     
+    console.log(foods);
+
     let newFoods = foods.map(food => {
       return db.newFoodEntry(food, req.body.name);
     });
