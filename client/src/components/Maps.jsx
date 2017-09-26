@@ -8,7 +8,7 @@ const Map = ReactMapboxGl({
 });
 
 const Maps = (props) => {
-  if (props.mapShow) {
+
     return (
     <div>
       <Map
@@ -49,12 +49,6 @@ const Maps = (props) => {
       </Map>
     </div>
     );
-  } else {
-    return (
-    <div>
-    </div>
-    )
-  }
 }
 
 export default Maps;

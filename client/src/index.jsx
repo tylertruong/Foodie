@@ -14,7 +14,6 @@ class App extends React.Component {
       foods: [],
       bookmarks: [],
       bookmark: {},
-      mapShow: false
     }
   }
 
@@ -52,7 +51,6 @@ class App extends React.Component {
     url: `/foods?query=${name}`,
     success: (data) => {
       this.setState({
-        mapShow: true,
         foods: data
       });
     }
@@ -94,7 +92,7 @@ class App extends React.Component {
         <br></br>
         <FoodDisplay bookmark={this.state.bookmark} />
         <br></br>
-        <Maps mapShow={this.state.mapShow} bookmarks={this.state.bookmarks} renderLocation={this.renderLocation.bind(this)} />
+        <Maps bookmarks={this.state.bookmarks} renderLocation={this.renderLocation.bind(this)} />
         <br></br>
         <FoodList foods={this.state.foods} bookmarkFood={this.bookmarkFood.bind(this)} />
       </div>
