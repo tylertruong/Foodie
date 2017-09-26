@@ -11,7 +11,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.get('/foods', (req, res, next) => {
-  console.log(req.query);
   if (req.query.bookmarks === 'bookmarks') {
     db.Food.find({bookmarked: true})
     .then((data) => {
@@ -39,10 +38,8 @@ app.post('/foods', (req, res, next) => {
     let result = JSON.parse(data);
     let foods = result.businesses;
     
-    let newFoods = []
-
-    foods.forEach(food => {
-      newFoods.push(db.newFoodEntry(food, req.body.name));
+    let newFoods = foods.map(food => {
+      return db.newFoodEntry(food, req.body.name);
     });
 
     Promise.all(newFoods)
@@ -53,7 +50,6 @@ app.post('/foods', (req, res, next) => {
       console.log(err);
       res.status(200).send();
     });
-
     
   });
   

@@ -1,7 +1,7 @@
 import React from 'react';
 //import BookmarkEntry from './BookmarkEntry.jsx';
 import MapBoxGl from 'mapbox-gl';
-import ReactMapboxGl, { Layer, Feature, Marker } from "react-mapbox-gl";
+import ReactMapboxGl, { Layer, Feature, Marker, Popup } from "react-mapbox-gl";
 
 const Map = ReactMapboxGl({
   accessToken: 'pk.eyJ1IjoidHlsZXJ0cnVvbmciLCJhIjoiY2o4MTFxbHN4NHZqMjJxbzN2bjNmMDByOCJ9.mZFEmpCfX5TytPpEujmYmg'
@@ -18,17 +18,33 @@ const Bookmarks = (props) => {
         height: "50vh",
         width: "100vw"
       }}>
+        {props.bookmarks.map((bookmark) => {
+          return <Popup
+            key={bookmark.id}
+            coordinates={[bookmark.long, bookmark.lat]}
+            offset={[0, -10]}
+            anchor='bottom'
+            >
+            {bookmark.name}
+          </Popup>
+        })}
         <Layer
           type="symbol"
           id="marker"
           layout={{ "icon-image": "fast-food-15" }}>
 
           {props.bookmarks.map((bookmark) => {
-              return <Feature key={bookmark.id} coordinates={[bookmark.long, bookmark.lat]}></Feature>
+              return <Feature 
+                        key={bookmark.id} 
+                        coordinates={[bookmark.long, bookmark.lat]}
+                        onClick={() => console.log(bookmark.name, bookmark.address1, bookmark.address2)}
+                        >
+                      </Feature>
             })
           }
           
         </Layer>
+
     </Map>
   </div>
     );

@@ -21,8 +21,8 @@ let foodSchema = mongoose.Schema({
   bookmarked: Boolean,
   query: String,
   long: Number,
-  lat: Number
-
+  lat: Number,
+  rating: Number
 })
 
 let Food = mongoose.model('Food', foodSchema);
@@ -38,7 +38,8 @@ let newFoodEntry = (food, query) => {
     bookmarked: false, 
     query: query,
     long: food.coordinates.longitude,
-    lat: food.coordinates.latitude
+    lat: food.coordinates.latitude,
+    rating: food.rating
   });
 
   return instance.save();

@@ -11,9 +11,16 @@ const FoodListEntry = (props) => {
           <b>Address:</b> <br></br>
           {props.food.address1} <br></br>
           {props.food.address2} <br></br>
-          <br></br>
+        
           <b>Phone:</b> <br></br>
-          {props.food.phone} <br></br><br></br>
+          {props.food.phone} <br></br>
+      
+          <b>Rating:</b> <br></br>
+          {props.food.rating}/5
+          <br></br>
+          <br></br>
+
+
           <button href="#" className="btn btn-primary" onClick={() => props.bookmarkFood(props.food)}>{props.food.bookmarked ? 'Bookmarked' : 'Bookmark'}</button>
         </p>
  
